@@ -10,9 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringApplicationConfiguration(classes = CapgeminiTechDayBackendApplication.class)
 @WebAppConfiguration
 public class CapgeminiTechDayBackendApplicationTests {
-
 	@Test
 	public void contextLoads() {
 	}
-
 }
