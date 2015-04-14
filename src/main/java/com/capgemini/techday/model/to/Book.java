@@ -1,4 +1,4 @@
-package com.capgemini.techday.model;
+package com.capgemini.techday.model.to;
 
 public class Book {
     private Long id;
