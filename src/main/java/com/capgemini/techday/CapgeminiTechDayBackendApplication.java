@@ -10,3 +10,4 @@ public class CapgeminiTechDayBackendApplication {
         SpringApplication.run(CapgeminiTechDayBackendApplication.class, args);
     }
 }
+

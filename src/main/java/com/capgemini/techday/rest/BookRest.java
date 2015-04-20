@@ -14,7 +14,7 @@ public class BookRest {
     private BookService bookService;
 
     @RequestMapping(value = "/books", method = RequestMethod.GET)
-    public List<Book> search(@RequestBody BookSearchCriteria bookSearchCriteria) {
+    public List<Book> search(BookSearchCriteria bookSearchCriteria) {
         return bookService.findBooksBySearchCriteria(bookSearchCriteria);
     }
 }

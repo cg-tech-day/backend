@@ -14,6 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -32,6 +33,24 @@ public class BookServiceImplTest {
         // then
         assertEquals("Result should find one book", 1, books.size());
         assertEquals("Book should have three authors", 3, books.get(0).getAuthors().split(",").length);
+    }
+
+    @Test
+    public void testShouldFindBooksByEmptySearchCriteria() {
+        // given
+        final BookSearchCriteria searchCriteria = new BookSearchCriteria();
+        // when
+        List<Book> books = bookService.findBooksBySearchCriteria(searchCriteria);
+        // then
+        assertFalse(books.isEmpty());
+    }
+
+    @Test
+    public void testShouldFindBooksByNullSearchCriteria() {
+        // given when
+        List<Book> books = bookService.findBooksBySearchCriteria(null);
+        // then
+        assertFalse(books.isEmpty());
     }
 
     @Test
